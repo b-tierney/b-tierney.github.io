@@ -1,1 +1,0 @@
-# b-tierney.github.io
