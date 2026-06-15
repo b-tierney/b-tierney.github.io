@@ -16,8 +16,8 @@
       --black:      #060b0f;
       --surface:    #0b1318;
       --edge:       #0e1c26;
-      --dim:        #1c3040;
-      --muted:      #486070;
+      --dim:        #4a7088;
+      --muted:      #6a96aa;
       --text:       #7aacbf;
       --bright:     #b2d8ea;
       --white:      #daedf5;
@@ -71,6 +71,7 @@
       background: var(--void);
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       padding: 3rem 2.25rem 2.5rem;
       z-index: 100;
       overflow-y: auto;
@@ -250,18 +251,7 @@
       max-width: 600px;
     }
 
-    /* drop cap on first paragraph */
-    .about-text p:first-child::first-letter {
-      font-family: 'Syne', sans-serif;
-      font-size: 3.75em;
-      font-weight: 700;
-      line-height: 0.78;
-      float: left;
-      margin: 0.05em 0.1em 0 0;
-      color: var(--accent);
-    }
-
-    .about-text a {
+.about-text a {
       position: relative;
       transition: opacity 0.2s;
     }
