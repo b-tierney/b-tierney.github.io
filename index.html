@@ -1,413 +1,651 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Braden Tierney</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-      rel="stylesheet"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.js"
-      integrity="sha256-awnyktR66d3+Hym/H0vYBQ1GkO06rFGkzKQcBj7npVE="
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body class="is-preload">
-    <!-- Header -->
-    <header id="header">
-      <div class="inner">
-        <a href="#" class="image avatar"
-          ><img src="images/avatar.jpg" alt=""
-        /></a>
-        <h1>
-          My name is <strong>Braden Tierney</strong>.<br />
-          I'm big into bacteria, human health, bioremediation, bioinformatics, and the intersections therein. Also scuba diving, hiking & music.
-        </h1>
-      </div>
-    </header>
+<html lang="en">
+<head>
+  <title>Braden Tierney</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Main -->
-    <div id="main">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            id="about-tab"
-            data-toggle="tab"
-            href="#about"
-            role="tab"
-            aria-controls="about"
-            aria-selected="true"
-            >About</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="cv-tab"
-            data-toggle="tab"
-            href="#cv"
-            role="tab"
-            aria-controls="cv"
-            aria-selected="false"
-            >CV</a
-          >
-        </li>
-<!--         <li class="nav-item">
-          <a
-            class="nav-link"
-            id="news-tab"
-            data-toggle="tab"
-            href="#news"
-            role="tab"
-            aria-controls="news"
-            aria-selected="false"
-            >News</a
-          >
-        </li>
+    :root {
+      --void:       #04070a;
+      --black:      #060b0f;
+      --surface:    #0b1318;
+      --edge:       #0e1c26;
+      --dim:        #1c3040;
+      --muted:      #486070;
+      --text:       #7aacbf;
+      --bright:     #b2d8ea;
+      --white:      #daedf5;
+      --accent:     #00e5b4;
+      --accent-b:   #00b8e6;
+      --glow:       rgba(0,229,180,0.22);
+      --glow-soft:  rgba(0,229,180,0.08);
+      --sidebar-w:  290px;
+      --ease:       cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-<!--         <li class="nav-item">
-          <a
-            class="nav-link"
-            id="misc-tab"
-            data-toggle="tab"
-            href="#misc"
-            role="tab"
-            aria-controls="misc"
-            aria-selected="false"
-            >Miscellaneous</a
-          >
-        </li> -->
-      </ul>
-      <div class="tab-content" id="myTabContent" style="padding-top: 3rem;">
-        <!-- About -->
-        <div
-          class="tab-pane fade show active"
-          id="about"
-          role="tabpanel"
-          aria-labelledby="about-tab"
-        >
-          <section id="about-section">
-            <header class="major">
-              <h2>
-                Hello!
-              </h2>
-            </header>
-            <p>
-            <p class="bold">I'm a scientist studying the data science of microbiology -- how large scale sequencing, computational biology, and microbes can be used jointly to solve problems facing the world. I spend my time running the <a href="https://twofrontiers.org/" target="_blank">Two Frontiers Project</a>: nonprofit research initiative leveraging the diversity of life in extreme environments to address major challenges in human and planetary health, including polluation, coral reef bleaching, and sustainable agriculture. We specialize in running expeditions around the globe to remote places and sequencing, culturing, and characterizing the life that lives there. I also hold a position at Harvard Medical School as their Director Exposomics and Microbial Data Science in their Department of Biomedical Informatics. 
+    html, body { height: 100%; }
 
-            <p class="bold">Prior to all this, I did a a postdoc at Weill Cornell Medical College, a PhD at Harvard Medical School with <a href="https://www.chiragjpgroup.org/" target="_blank">Chirag Patel</a> and <a href="https://www.kosticlab.org/" target="_blank">Alex Kostic</a>. Before that, I majored in Biology and Economics at Duke University in Durham, North Carolina. During my time there, I worked with <a href="https://sites.duke.edu/benfey/" target="_blank">Philip Benfey</a> on the development of the Arabidopsis root microbiome, <a href="http://shanklab.weebly.com/">Beth Shank</a> on the soil microbiome, and <a href="http://agbiome.com/">AgBiome</a>, a company focused on building microbial-based treatments for crop-based diseases. I also currently run a small microbiome consultancy, Micro Biosciences -- if you're interested in some help with bioinformatics, don't hesitate to reach out.</p>
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-            <p class="bold"> Outside of science, I spent most of my time playing music, trail running, scuba diving and, at every available opportunity, eating at Waffle Houses. </p>
+    /* atmospheric deep-ocean glow */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 65% 55% at 12% 50%, rgba(0,229,180,0.025) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 65% at 90% 10%, rgba(0,184,230,0.018) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-            <p class="bold"> You can check out my <a href="https://scholar.google.com/citations?user=uV17KDusd4UC&hl=en&oi=ao " target="_blank">Publication record</a> here, and I highly recommend you stop by the <a href="https://twofrontiers.org/" target="_blank">Two Frontiers Project website</a>. </p>
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    a:hover { opacity: 0.65; }
+    strong, b { color: var(--bright); font-weight: 500; }
+    p { margin-bottom: 1.5em; }
 
-          </p>
- <!--            <ul class="actions">
-              <li><a href="#" class="button">Learn More</a></li>
-            </ul> -->
-          </section>
+    /* ── SIDEBAR ─────────────────────────────────────── */
+    #sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--void);
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 2.25rem 2.5rem;
+      z-index: 100;
+      overflow-y: auto;
+    }
+
+    /* gradient right border */
+    #sidebar::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--accent) 25%,
+        var(--accent-b) 75%,
+        transparent 100%
+      );
+      opacity: 0.13;
+    }
+
+    /* Avatar */
+    .avatar-wrap {
+      display: inline-block;
+      border-radius: 50%;
+      padding: 2.5px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-b) 100%);
+      box-shadow: 0 0 22px var(--glow);
+      margin-bottom: 1.85rem;
+      flex-shrink: 0;
+    }
+
+    .avatar-wrap img {
+      display: block;
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      object-fit: cover;
+      /* creates gap between image and gradient ring */
+      box-shadow: 0 0 0 2.5px var(--void);
+    }
+
+    .sidebar-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .sidebar-tagline {
+      font-size: 0.775rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .sidebar-divider {
+      width: 28px;
+      height: 1px;
+      background: var(--edge);
+      margin: 2rem 0;
+    }
+
+    /* Social icons */
+    .social-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .social-list a {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--dim);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.695rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s, transform 0.25s var(--ease);
+      opacity: 1;
+    }
+
+    .social-list a:hover {
+      color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    .social-list .fa {
+      font-size: 0.85rem;
+      width: 14px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 2.5rem;
+    }
+
+    .copyright {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--dim);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── MAIN ────────────────────────────────────────── */
+    #main {
+      margin-left: var(--sidebar-w);
+      min-height: 100vh;
+      padding: 3.5rem 4rem 5rem;
+      max-width: calc(var(--sidebar-w) + 700px);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── TABS ─────────────────────────────────────────── */
+    .tabs-nav {
+      display: flex;
+      border-bottom: 1px solid var(--edge);
+      margin-bottom: 3rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--dim);
+      cursor: pointer;
+      padding: 0.5rem 0 0.7rem;
+      margin-right: 2.25rem;
+      position: relative;
+      transition: color 0.25s;
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s var(--ease);
+    }
+
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--accent); }
+    .tab-btn.active::after { transform: scaleX(1); }
+
+    /* ── PANELS ───────────────────────────────────────── */
+    .tab-panel { display: none; }
+    .tab-panel.active {
+      display: block;
+      animation: panelIn 0.4s var(--ease) both;
+    }
+
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── ABOUT ────────────────────────────────────────── */
+    .about-text p {
+      font-size: 0.93rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.9;
+      max-width: 600px;
+    }
+
+    /* drop cap on first paragraph */
+    .about-text p:first-child::first-letter {
+      font-family: 'Syne', sans-serif;
+      font-size: 3.75em;
+      font-weight: 700;
+      line-height: 0.78;
+      float: left;
+      margin: 0.05em 0.1em 0 0;
+      color: var(--accent);
+    }
+
+    .about-text a {
+      position: relative;
+      transition: opacity 0.2s;
+    }
+
+    .about-text a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 0;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.25;
+      transition: opacity 0.2s;
+    }
+
+    .about-text a:hover { opacity: 1; }
+    .about-text a:hover::after { opacity: 0.6; }
+
+    /* ── CV ───────────────────────────────────────────── */
+    .cv-group { margin-bottom: 3.5rem; }
+
+    .cv-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .cv-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--edge);
+    }
+
+    .cv-row {
+      display: grid;
+      grid-template-columns: 1fr 152px;
+      gap: 0.5rem 2rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--edge);
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .cv-row:last-child { border-bottom: none; }
+
+    /* left accent bar on hover */
+    .cv-row::before {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: 1.25rem; bottom: 1.25rem;
+      width: 1px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .cv-row:hover::before { opacity: 0.55; }
+
+    .cv-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--bright);
+      line-height: 1.45;
+      margin-bottom: 0.28rem;
+    }
+
+    .cv-desc {
+      font-size: 0.755rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .cv-meta {
+      text-align: right;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.61rem;
+      color: var(--dim);
+      line-height: 1.9;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media screen and (max-width: 920px) {
+      #sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem 1.25rem;
+        padding: 1.25rem 2rem;
+        overflow: visible;
+      }
+
+      #sidebar::after { display: none; }
+
+      .avatar-wrap {
+        margin-bottom: 0;
+      }
+
+      .avatar-wrap img { width: 46px; height: 46px; }
+
+      .sidebar-info { flex: 1; }
+
+      .sidebar-tagline { display: none; }
+      .sidebar-divider { display: none; }
+
+      .social-list {
+        flex-direction: row;
+        gap: 1.1rem;
+        margin-left: auto;
+      }
+
+      .social-list .handle { display: none; }
+      .social-list a { transform: none !important; }
+      .social-list .fa { font-size: 1rem; width: auto; }
+
+      .sidebar-footer { display: none; }
+
+      #main {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 2.5rem 2rem 4rem;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      #sidebar { padding: 1.25rem 1.5rem; }
+      #main { padding: 2rem 1.5rem 3rem; }
+
+      .cv-row {
+        grid-template-columns: 1fr;
+      }
+      .cv-meta {
+        text-align: left;
+      }
+
+      .about-text p:first-child::first-letter {
+        font-size: 2.75em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div class="avatar-wrap">
+    <img src="images/avatar.jpg" alt="Braden Tierney" />
+  </div>
+
+  <div class="sidebar-info">
+    <div class="sidebar-name">Braden Tierney</div>
+    <div class="sidebar-tagline">
+      My name is <strong style="color:var(--bright)">Braden Tierney</strong>.<br />
+      I'm big into bacteria, human health,<br />
+      bioremediation, bioinformatics,<br />
+      and the intersections therein.<br />
+      Also scuba diving, hiking &amp; music.
+    </div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <ul class="social-list">
+    <li>
+      <a href="https://twitter.com/bradentierney" target="_blank">
+        <i class="fa fa-twitter"></i>
+        <span class="handle">@bradentierney</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/b-tierney" target="_blank">
+        <i class="fa fa-github"></i>
+        <span class="handle">b-tierney</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/braden.tierney" target="_blank">
+        <i class="fa fa-facebook"></i>
+        <span class="handle">braden.tierney</span>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:braden@twofrontiers.org">
+        <i class="fa fa-envelope-o"></i>
+        <span class="handle">braden@twofrontiers.org</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="sidebar-footer">
+    <div class="copyright">&copy; Braden Tierney 2025</div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main id="main">
+
+  <nav class="tabs-nav" role="tablist">
+    <button class="tab-btn active" data-tab="about" role="tab" aria-selected="true">About</button>
+    <button class="tab-btn" data-tab="cv" role="tab" aria-selected="false">CV</button>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="about" class="tab-panel active" role="tabpanel">
+    <div class="about-text">
+      <p>I'm a scientist studying the data science of microbiology -- how large scale sequencing, computational biology, and microbes can be used jointly to solve problems facing the world. I spend my time running the <a href="https://twofrontiers.org/" target="_blank">Two Frontiers Project</a>: nonprofit research initiative leveraging the diversity of life in extreme environments to address major challenges in human and planetary health, including polluation, coral reef bleaching, and sustainable agriculture. We specialize in running expeditions around the globe to remote places and sequencing, culturing, and characterizing the life that lives there. I also hold a position at Harvard Medical School as their Director Exposomics and Microbial Data Science in their Department of Biomedical Informatics.</p>
+
+      <p>Prior to all this, I did a a postdoc at Weill Cornell Medical College, a PhD at Harvard Medical School with <a href="https://www.chiragjpgroup.org/" target="_blank">Chirag Patel</a> and <a href="https://www.kosticlab.org/" target="_blank">Alex Kostic</a>. Before that, I majored in Biology and Economics at Duke University in Durham, North Carolina. During my time there, I worked with <a href="https://sites.duke.edu/benfey/" target="_blank">Philip Benfey</a> on the development of the Arabidopsis root microbiome, <a href="http://shanklab.weebly.com/">Beth Shank</a> on the soil microbiome, and <a href="http://agbiome.com/">AgBiome</a>, a company focused on building microbial-based treatments for crop-based diseases. I also currently run a small microbiome consultancy, Micro Biosciences -- if you're interested in some help with bioinformatics, don't hesitate to reach out.</p>
+
+      <p>Outside of science, I spent most of my time playing music, trail running, scuba diving and, at every available opportunity, eating at Waffle Houses.</p>
+
+      <p>You can check out my <a href="https://scholar.google.com/citations?user=uV17KDusd4UC&hl=en&oi=ao" target="_blank">Publication record</a> here, and I highly recommend you stop by the <a href="https://twofrontiers.org/" target="_blank">Two Frontiers Project website</a>.</p>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv" class="tab-panel" role="tabpanel">
+
+    <div class="cv-group">
+      <div class="cv-label">Employment History</div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Executive Director, Two Frontiers Project</div>
+          <div class="cv-desc">Microbial exploration in humanity's greatest frontiers.</div>
         </div>
-        <!-- end About -->
-
-        <!-- CV -->
-        <div
-          class="tab-pane fade"
-          id="cv"
-          role="tabpanel"
-          aria-labelledby="cv-tab"
-        >
-          <section id="cv-section">
-            <h2>Employment History</h2>
-            <div class="table-wrapper">
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      <strong
-                        >Executive Director,<br />
-                        Two Frontiers Project</strong
-                      >
-                      <br />
-                        Microbial exploration in humanity's greatest frontiers.
-                    </td>
-                    <td>
-                      10/2022 – present, Boston, MA<br />
-                      Harvard Medical School
-                    </td>
-                    </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Director of Exposomics and Microbial Data Science, <br />
-                        Department of Biomedical Informatics, Harvard Medical School</strong
-                      >
-                      <br />
-                       Working on the intersection between microbes, human health, and everything in between.
-                    </td>
-                    <td>
-                      10/2024 – present, Boston, MA<br />
-                      Harvard Medical School
-                    </td>
-                    </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Postdoctoral Fellow/Research Associate, <br />
-                        Laboratories of Dr. Christopher Mason and Dr. George Church</strong
-                      >
-                      <br />
-                      Leveraging the data science of microbiology to solve problems facing us on Earth and beyond
-                    </td>
-                    <td>
-                      05/2021 – present, New York, NY<br />
-                      Weill Cornell Medical College/Harvard Medical School
-                    </td>
-                    </tr>
-                    <td>
-                      <strong
-                        >PhD Candidate, <br />
-                        Laboratories of Dr. Chirag J Patel and Dr. Aleksandar D
-                        Kostic</strong
-                      >
-                      <br />
-                      Developing statistical methods for microbiome analysis
-                    </td>
-                    <td>
-                      03/2017 – 05/2021, Boston, MA<br />
-                      Harvard Medical School/Joslin Diabetes Center
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Rotation Student, Laboratory of Dr. Chirag J Patel</strong
-                      >
-                      <br />
-                      Using electronic health records and census data to model
-                      disease prevalence
-                    </td>
-                    <td>
-                      01/2017 – 03/2017, Boston, MA<br />
-                      Harvard Medical School
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Rotation Student, Laboratory of Dr. Paula Watnick</strong
-                      >
-                      <br />
-                      Finding drivers of biofilm formation in Vibrio cholera
-                    </td>
-                    <td>
-                      10/2016 – 12/2016, Boston, MA<br />
-                      Harvard Medical School/Boston Children’s Hospital
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Rotation Student, Laboratory of Dr. George
-                        Church</strong
-                      ><br />
-                      Engineering bacterially derived biosensors
-                    </td>
-                    <td>
-                      07/2016 – 10/2016, Boston, MA<br />
-                      Harvard Medical School
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Lead Microscopist</strong><br />
-                      Finding and validating microbial methods for crop disease
-                      control
-                    </td>
-                    <td>
-                      03/2014 – 06/2016, Durham, NC<br />
-                      AgBiome, LLC
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Research Assistant, Laboratory of Dr. Elizabeth
-                        Shank</strong
-                      ><br />
-                      Developed an algorithm for blind spectral image analysis
-                    </td>
-                    <td>
-                      04/2015 – 06/2016, Chapel Hill, NC<br />
-                      University of North Carolina Chapel Hill
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Pianist</strong><br />
-                      Pianist in a hotel bar
-                    </td>
-                    <td>
-                      02/2015 – 06/2016, Durham, NC<br />
-                      Doubletree Hilton
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Research Assistant, Laboratory of Dr. Philip
-                        Benfey</strong
-                      ><br />
-                      Identified/engineered Arabidopsis root growth promoting
-                      bacteria
-                    </td>
-                    <td>
-                      01/2014 – 06/2016, Durham, NC<br />
-                      Duke University
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Research Assistant, Laboratory Dr. Rafael
-                        Valdivia</strong
-                      ><br />
-                      Searching for drivers of biofilm formation in
-                      Exiguobacterium
-                    </td>
-                    <td>
-                      01/2013 – 05/2014, Durham, NC<br />
-                      Duke University
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Research Assistant, Laboratory of Dr. Gary Borisy </strong
-                      ><br />
-                      Method development for studying spatial structure of the
-                      oral microbiome
-                    </td>
-                    <td>
-                      06/2010 – 09/2013, Woods Hole, MA<br />
-                      Marine Biological Laboratories
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Research Assistant, Sediment Core Laboratory </strong
-                      ><br />
-                      Analyzing ocean sediment core records to gauge ocean
-                      warming
-                    </td>
-                    <td>
-                      06/2009 – 09/2009, Woods Hole, MA<br />
-                      Woods Hole Oceanographic Institution
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h2>Education</h2>
-            <div class="table-wrapper">
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      <strong>PhD in Biological and Biomedical Sciences</strong>
-                      <br />Focus: Computational Microbiology/Bioinformatics
-                    </td>
-                    <td>
-                      07/2017 – present, Boston, MA<br />
-                      Harvard Medical School
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong
-                        >Bachelor of Science in Biology<br />
-                        Bachelor of Science in Economics
-                      </strong>
-                    </td>
-                    <td>
-                      08/2012 – 05/2016, Durham, NC<br />
-                      Duke University
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <ul class="actions">
-              <li><a href="#" class="button">Download CV</a></li>
-            </ul>
-          </section>
-        </div>
-        <!-- end CV -->
-
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="inner">
-        <ul class="icons">
-          <li>
-            <a href="https://twitter.com/bradentierney" class="icon fa-twitter"
-              ><span class="label">Twitter</span></a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/b-tierney" class="icon fa-github"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/braden.tierney"
-              class="icon fa-facebook"
-              ><span class="label">Facebook</span></a
-            >
-          </li>
-          <li>
-            <a href="mailto:braden@twofrontiers.org" class="icon fa-envelope-o"
-              ><span class="label">Email</span></a
-            >
-          </li>
-        </ul>
-        <ul class="copyright">
-          <li>&copy; Braden Tierney 2025</li>
-          <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-        </ul>
+        <div class="cv-meta">10/2022 – present<br/>Boston, MA<br/>Harvard Medical School</div>
       </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      $(function() {
-        $('[data-toggle="tooltip"]').tooltip();
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Director of Exposomics and Microbial Data Science<br/>Department of Biomedical Informatics, Harvard Medical School</div>
+          <div class="cv-desc">Working on the intersection between microbes, human health, and everything in between.</div>
+        </div>
+        <div class="cv-meta">10/2024 – present<br/>Boston, MA<br/>Harvard Medical School</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Postdoctoral Fellow / Research Associate<br/>Laboratories of Dr. Christopher Mason and Dr. George Church</div>
+          <div class="cv-desc">Leveraging the data science of microbiology to solve problems facing us on Earth and beyond.</div>
+        </div>
+        <div class="cv-meta">05/2021 – present<br/>New York, NY<br/>Weill Cornell / HMS</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">PhD Candidate<br/>Laboratories of Dr. Chirag J Patel and Dr. Aleksandar D Kostic</div>
+          <div class="cv-desc">Developing statistical methods for microbiome analysis.</div>
+        </div>
+        <div class="cv-meta">03/2017 – 05/2021<br/>Boston, MA<br/>HMS / Joslin Diabetes Center</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Rotation Student, Laboratory of Dr. Chirag J Patel</div>
+          <div class="cv-desc">Using electronic health records and census data to model disease prevalence.</div>
+        </div>
+        <div class="cv-meta">01/2017 – 03/2017<br/>Boston, MA<br/>Harvard Medical School</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Rotation Student, Laboratory of Dr. Paula Watnick</div>
+          <div class="cv-desc">Finding drivers of biofilm formation in Vibrio cholera.</div>
+        </div>
+        <div class="cv-meta">10/2016 – 12/2016<br/>Boston, MA<br/>HMS / Boston Children's</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Rotation Student, Laboratory of Dr. George Church</div>
+          <div class="cv-desc">Engineering bacterially derived biosensors.</div>
+        </div>
+        <div class="cv-meta">07/2016 – 10/2016<br/>Boston, MA<br/>Harvard Medical School</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Lead Microscopist</div>
+          <div class="cv-desc">Finding and validating microbial methods for crop disease control.</div>
+        </div>
+        <div class="cv-meta">03/2014 – 06/2016<br/>Durham, NC<br/>AgBiome, LLC</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Research Assistant, Laboratory of Dr. Elizabeth Shank</div>
+          <div class="cv-desc">Developed an algorithm for blind spectral image analysis.</div>
+        </div>
+        <div class="cv-meta">04/2015 – 06/2016<br/>Chapel Hill, NC<br/>UNC Chapel Hill</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Pianist</div>
+          <div class="cv-desc">Pianist in a hotel bar.</div>
+        </div>
+        <div class="cv-meta">02/2015 – 06/2016<br/>Durham, NC<br/>Doubletree Hilton</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Research Assistant, Laboratory of Dr. Philip Benfey</div>
+          <div class="cv-desc">Identified / engineered Arabidopsis root growth promoting bacteria.</div>
+        </div>
+        <div class="cv-meta">01/2014 – 06/2016<br/>Durham, NC<br/>Duke University</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Research Assistant, Laboratory Dr. Rafael Valdivia</div>
+          <div class="cv-desc">Searching for drivers of biofilm formation in Exiguobacterium.</div>
+        </div>
+        <div class="cv-meta">01/2013 – 05/2014<br/>Durham, NC<br/>Duke University</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Research Assistant, Laboratory of Dr. Gary Borisy</div>
+          <div class="cv-desc">Method development for studying spatial structure of the oral microbiome.</div>
+        </div>
+        <div class="cv-meta">06/2010 – 09/2013<br/>Woods Hole, MA<br/>Marine Biological Laboratories</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Research Assistant, Sediment Core Laboratory</div>
+          <div class="cv-desc">Analyzing ocean sediment core records to gauge ocean warming.</div>
+        </div>
+        <div class="cv-meta">06/2009 – 09/2009<br/>Woods Hole, MA<br/>Woods Hole Oceanographic Institution</div>
+      </div>
+    </div>
+
+    <div class="cv-group">
+      <div class="cv-label">Education</div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">PhD in Biological and Biomedical Sciences</div>
+          <div class="cv-desc">Focus: Computational Microbiology / Bioinformatics</div>
+        </div>
+        <div class="cv-meta">07/2017 – present<br/>Boston, MA<br/>Harvard Medical School</div>
+      </div>
+
+      <div class="cv-row">
+        <div>
+          <div class="cv-title">Bachelor of Science in Biology<br/>Bachelor of Science in Economics</div>
+        </div>
+        <div class="cv-meta">08/2012 – 05/2016<br/>Durham, NC<br/>Duke University</div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
       });
-    </script>
-  </body>
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
 </html>
-
-
-
-
